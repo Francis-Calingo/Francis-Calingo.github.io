@@ -1,10 +1,13 @@
-# Francis Emmanuel Calingo
+# About Me
 
-## Aspiring Geospatial Data Scientist
+### Summary
+
 
 ### Education
 HBSc., Applied Mathematics and Statistics (2022)
 
+### Supplementary Education 
+
+
 ### Work Experience
 
-### Supplementary Education 
