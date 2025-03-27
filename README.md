@@ -32,7 +32,3 @@ HBSc., Applied Mathematics and Statistics (2022)
   <a href="https://medium.com/@calingo2francis">
     <img src="https://img.shields.io/badge/Medium-white?style=for-the-badge&logo=medium&logoColor=black" alt="Medium Badge"/>
   </a>
-
-
-</div>
-
