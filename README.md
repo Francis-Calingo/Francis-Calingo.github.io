@@ -13,7 +13,6 @@ HBSc., Applied Mathematics and Statistics (2022)
 
 ### Links
 
-</div>
 
 <div id="badges" align="center">
   <a href="mailto:calingo2francis@gmail.com">
