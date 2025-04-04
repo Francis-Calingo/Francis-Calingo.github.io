@@ -11,13 +11,13 @@
     <h1>Your Name</h1>
     <p>Aspiring Geospatial Data Scientist</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#" class="tab-link" data-tab="about">About</a>
+      <a href="#" class="tab-link" data-tab="projects">Projects</a>
+      <a href="#" class="tab-link" data-tab="contact">Contact</a>
     </nav>
   </header>
 
-  <section id="about">
+  <section id="about" class="tab-content active">
     <h2>About Me</h2>
     <p>I am a geospatial data scientist with interests in migration, socioeconomic research, and spatial analysis using Python, R, and GIS tools.</p>
   </section>
@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 
-  <section id="projects">
+  <section id="projects" class="tab-content">
     <h2>Projects</h2>
     <div class="project-card">
       <h3>Filipino Migration & Settlement Patterns</h3>
@@ -36,7 +36,7 @@
     <!-- Add more projects here -->
   </section>
 
-  <section id="contact">
+  <section id="contact" class="tab-content">
     <h2>Contact</h2>
     <p>Email: your.email@example.com</p>
     <p>GitHub: <a href="https://github.com/your-username" target="_blank">@your-username</a></p>
