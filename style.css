@@ -38,3 +38,23 @@ footer {
   padding: 1em;
   background: #ccc;
 }
+
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
+}
+
+nav a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
