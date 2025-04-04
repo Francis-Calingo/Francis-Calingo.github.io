@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background: #004d40;
+  color: white;
+  padding: 2em;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+section {
+  padding: 2em;
+  max-width: 900px;
+  margin: auto;
+}
+
+.project-card {
+  background: white;
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 5px solid #00695c;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #ccc;
+}
