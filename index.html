@@ -121,8 +121,25 @@
 
   <section id="contact" class="tab-content">
     <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>GitHub: <a href="https://github.com/your-username" target="_blank">@your-username</a></p>
+
+<section class="contact">
+  <h2>Contact Me</h2>
+  <form id="contact-form">
+    <label>Name:</label>
+    <input type="text" name="from_name" required />
+
+    <label>Email:</label>
+    <input type="email" name="reply_to" required />
+
+    <label>Message:</label>
+    <textarea name="message" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <p id="form-status"></p>
+</section>
+    
   </section>
 
   <footer>
