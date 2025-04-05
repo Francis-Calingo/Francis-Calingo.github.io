@@ -138,6 +138,29 @@
   </form>
 
   <p id="form-status"></p>
+
+  <! –– JS Comment ––>
+  
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("Francis-Calingo"); // Replace with your EmailJS User ID
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_francali", "template_17fok3j", this)
+      .then(() => {
+        document.getElementById("form-status").textContent = "Message sent successfully!";
+        this.reset();
+      }, (error) => {
+        document.getElementById("form-status").textContent = "Oops! Something went wrong.";
+        console.error(error);
+      });
+  });
+</script>
+  
 </section>
     
   </section>
