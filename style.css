@@ -77,3 +77,46 @@ body.dark .project-card {
   background: #1e1e1e;
   border-left-color: #00bfa5;
 }
+
+/* Contact Form Styling */
+
+.contact {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.contact label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #003d80;
+}
+
+#form-status {
+  margin-top: 15px;
+  font-style: italic;
+  color: green;
+}
