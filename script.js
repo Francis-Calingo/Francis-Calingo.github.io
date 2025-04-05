@@ -6,10 +6,13 @@ document.querySelectorAll("nav a").forEach(link => {
   });
 });
 
+// Add interactive map
 var map = L.map('map').setView([43.65107, -79.347015], 10); // Toronto coords
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
+
+// Add dynamic tabs
 
 const tabLinks = document.querySelectorAll(".tab-link");
 const tabContents = document.querySelectorAll(".tab-content");
@@ -27,5 +30,12 @@ tabLinks.forEach(link => {
     this.classList.add("active");
     document.getElementById(tabId).classList.add("active");
   });
+});
+
+// Enable dark mode
+
+const toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
 });
 
