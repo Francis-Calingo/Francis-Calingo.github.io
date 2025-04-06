@@ -137,6 +137,35 @@ body.dark .project-card {
   border-left-color: #00bfa5;
 }
 
+/* Contact links formatting*/
+
+.contact-links {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-links p {
+  margin: 0.4rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-links i {
+  margin-right: 10px;
+  color: #555;
+  min-width: 20px;
+}
+
+.contact-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+  color: #0077b5; /* blue for LinkedIn feel */
+}
 
 /* Contact Form Styling */
 
