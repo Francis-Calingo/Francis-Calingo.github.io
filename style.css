@@ -35,26 +35,34 @@ footer {
 
 /* Format cards */
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
 .project-card {
-  background: white;
-  padding: 1em;
-  max-width: 400px;
-  margin: 1em 0;
-  border-left: 5px solid #00695c;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 .education-card {
-  max-width: 400px;
-  margin: 1em 0;
-  border-left: 5px solid #00695c;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
 
 /* Code to Create Dynamic Tabs */
