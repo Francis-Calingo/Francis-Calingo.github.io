@@ -39,3 +39,26 @@ toggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
 });
 
+<script>
+  // Open modal
+  document.querySelectorAll('.open-modal').forEach(button => {
+    button.addEventListener('click', () => {
+      const modalId = button.getAttribute('data-modal');
+      document.getElementById(modalId).style.display = 'block';
+    });
+  });
+
+  // Close modal when clicking X
+  document.querySelectorAll('.close-modal').forEach(button => {
+    button.addEventListener('click', () => {
+      button.closest('.modal').style.display = 'none';
+    });
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', event => {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = 'none';
+    }
+  });
+</script>
