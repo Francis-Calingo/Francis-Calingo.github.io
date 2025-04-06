@@ -125,17 +125,10 @@
     </div>
     <!-- Add more projects here -->
     <div class="project-card">
-<iframe 
-    src="https://storymaps.arcgis.com/stories/44ef21a201d04242942a9573d5d62919" 
-    width="100%" 
-    height="300" 
-    frameborder="0" 
-    allowfullscreen
-    loading="lazy">
-  </iframe>
+	<img src="./assets/images/Mapping%20the%20Decline%20of%20Philippine%20Regional%20Languages%20Thumbnail.PNG" class="card-img-top">
       <h3>Mapping the Decline of Philippine Regional Languages</h3>
       <p>Analysis using census data and QGIS to visualize Filipino migration trends across Canada.</p>
-      <a href="assets/projects/filipino-migration.html" target="_blank">View Project</a>
+      <button class="open-modal" data-modal="storymapModal">View StoryMap</button>
     </div>
     <!-- Add more projects here -->
     <div class="project-card">
@@ -146,6 +139,21 @@
     </div>
     <!-- Add more projects here -->
     </div>
+
+<div id="storymapModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <iframe 
+      src="https://storymaps.arcgis.com/stories/44ef21a201d04242942a9573d5d62919" 
+      width="100%" 
+      height="500" 
+      frameborder="0" 
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+	  
   </section>
 
   <section id="resume" class="tab-content">
