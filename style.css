@@ -137,6 +137,14 @@ body.dark .project-card {
   border-left-color: #00bfa5;
 }
 
+body.dark-mode .contact-list i {
+  color: #bbb;
+}
+
+body.dark-mode .contact-list a:hover {
+  color: #4da8ff; /* Softer blue for dark mode */
+}
+
 /* Contact links formatting*/
 
 .contact-links {
