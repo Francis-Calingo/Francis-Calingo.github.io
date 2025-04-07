@@ -44,3 +44,22 @@ if (toggleBtn) {
     toggleBtn.classList.toggle('active');
   });
 }
+
+// JavaScript to add visibility on scroll
+document.addEventListener("DOMContentLoaded", function() {
+  const resumeBlocks = document.querySelectorAll('.resume-block');
+
+  function checkVisibility() {
+    const triggerBottom = window.innerHeight * 0.8;
+
+    resumeBlocks.forEach(block => {
+      const blockTop = block.getBoundingClientRect().top;
+      if (blockTop < triggerBottom) {
+        block.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  checkVisibility(); // To check visibility when page loads
+});
