@@ -51,7 +51,7 @@ header {
   text-decoration: none;
 } */
 
-nav ul {
+/* nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -68,9 +68,27 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+} */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  border-bottom: 2px solid #eee;
+  padding: 15px;
+  gap: 30px;
 }
 
+.nav-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s ease;
+}
 
+.nav-link:hover {
+  color: #007acc;
+}
 
 section {
   padding: 2em;
