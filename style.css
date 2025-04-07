@@ -146,6 +146,66 @@ form button {
   cursor: pointer;
 }
 
+/* Style project entries */
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-entry {
+  background-color: #ffffff;
+  border-left: 5px solid #007acc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.project-entry:hover {
+  transform: translateY(-5px);
+}
+
+.project-entry h3 {
+  margin-top: 0;
+  font-family: 'Merriweather', serif;
+}
+
+.project-entry h3 a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.project-entry h3 a:hover {
+  text-decoration: underline;
+}
+
+.project-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.project-btn:hover {
+  background-color: #005fa3;
+}
+
 form button:hover {
   background-color: #003d82;
 }
