@@ -127,10 +127,30 @@ section#resume {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: #1a1a1a;
+  text-align: center;
+  position: relative;
+}
+
+#resume h2::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #0056b3;
+  bottom: -5px;
+  left: 25%;
 }
 
 .resume-block {
   margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.resume-block.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .resume-block h3 {
@@ -138,6 +158,11 @@ section#resume {
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #0056b3;
+  transition: color 0.3s ease-in-out;
+}
+
+.resume-block h3:hover {
+  color: #ff7f50; /* Hover color effect */
 }
 
 .resume-block p {
@@ -161,6 +186,11 @@ section#resume {
 
 .resume-block ul li {
   margin-bottom: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.resume-block ul li:hover {
+  transform: translateX(10px); /* Subtle hover effect */
 }
 
 @media (max-width: 768px) {
