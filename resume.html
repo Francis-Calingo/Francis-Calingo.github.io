@@ -29,62 +29,80 @@
   </header>
 
 <main>
-  <h2>Resume</h2>
+    <h2>Resume</h2>
 
-  <div class="resume-section">
-    <h3>Education</h3>
-
-    <div class="resume-entry">
-      <div class="resume-date">2013 – 2019</div>
-      <div class="resume-details">
-        <h4>Honours BSc in Applied Mathematics, Statistics Minor</h4>
-        <p>York University, Toronto, ON</p>
-        <ul>
-          <li>Courses: Mathematical Modeling, Statistical Inference, Regression, Data Mining</li>
-          <li>Extracurricular: Founder & President, Filipino Student Association of York</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="resume-section">
-    <h3>Professional Experience</h3>
-
-    <div class="resume-entry">
-      <div class="resume-date">2019 – Present</div>
-      <div class="resume-details">
-        <h4>Researcher & Community Organizer</h4>
-        <p>Various Non-profit and Academic Institutions</p>
-        <ul>
-          <li>6+ years experience in quantitative & qualitative analysis of socioeconomic and migration data</li>
-          <li>Designed and led community-based research projects, including workshops and knowledge translation</li>
-        </ul>
+    <div class="resume-section resume-block">
+      <h3>Education</h3>
+      <div class="resume-entry">
+        <div class="resume-date">2013 – 2019</div>
+        <div class="resume-details">
+          <h4>Honours BSc in Applied Mathematics, Statistics Minor</h4>
+          <p>York University, Toronto, ON</p>
+          <ul>
+            <li>Courses: Mathematical Modeling, Statistical Inference, Regression, Data Mining</li>
+            <li>Extracurricular: Founder & President, Filipino Student Association of York</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="resume-entry">
-      <div class="resume-date">2023 – Present</div>
-      <div class="resume-details">
-        <h4>GIS & Data Science Certificate Programs (In Progress)</h4>
-        <p>University of Toronto & University of Waterloo (Online)</p>
-        <ul>
-          <li>Gained proficiency in Python, R, Excel, and Tableau</li>
-          <li>Built geospatial migration project using Leaflet and GitHub Pages</li>
-        </ul>
+    <div class="resume-section resume-block">
+      <h3>Professional Experience</h3>
+      <div class="resume-entry">
+        <div class="resume-date">2019 – Present</div>
+        <div class="resume-details">
+          <h4>Researcher & Community Organizer</h4>
+          <p>Various Non-profit and Academic Institutions</p>
+          <ul>
+            <li>6+ years experience in quantitative & qualitative analysis of socioeconomic and migration data</li>
+            <li>Designed and led community-based research projects, including workshops and knowledge translation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-date">2023 – Present</div>
+        <div class="resume-details">
+          <h4>GIS & Data Science Certificate Programs (In Progress)</h4>
+          <p>University of Toronto & University of Waterloo (Online)</p>
+          <ul>
+            <li>Gained proficiency in Python, R, Excel, and Tableau</li>
+            <li>Built geospatial migration project using Leaflet and GitHub Pages</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="resume-section">
-    <h3>Skills</h3>
-    <ul>
-      <li><strong>Programming:</strong> Python, R, JavaScript (basic), HTML/CSS, SQL (intro), Git/GitHub</li>
-      <li><strong>Tools:</strong> Excel, Tableau, ArcGIS, QGIS, Leaflet.js, VS Code</li>
-      <li><strong>Methods:</strong> Data cleaning, exploratory analysis, data visualization, geospatial mapping</li>
-      <li><strong>Communication:</strong> Public speaking, technical writing, workshop facilitation</li>
-    </ul>
-  </div>
-</main>
+    <div class="resume-section resume-block">
+      <h3>Skills</h3>
+      <ul>
+        <li><strong>Programming:</strong> Python, R, JavaScript (basic), HTML/CSS, SQL (intro), Git/GitHub</li>
+        <li><strong>Tools:</strong> Excel, Tableau, ArcGIS, QGIS, Leaflet.js, VS Code</li>
+        <li><strong>Methods:</strong> Data cleaning, exploratory analysis, data visualization, geospatial mapping</li>
+        <li><strong>Communication:</strong> Public speaking, technical writing, workshop facilitation</li>
+      </ul>
+    </div>
+  </main>
 
+  <!-- JavaScript for scroll animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const resumeBlocks = document.querySelectorAll('.resume-block');
+
+      function checkVisibility() {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        resumeBlocks.forEach(block => {
+          const blockTop = block.getBoundingClientRect().top;
+          if (blockTop < triggerBottom) {
+            block.classList.add('visible');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', checkVisibility);
+      checkVisibility(); // To check visibility when page loads
+    });
+  </script>
 </body>
 </html>
