@@ -175,6 +175,22 @@ body.dark-mode .contact-list a:hover {
   color: #0077b5; /* blue for LinkedIn feel */
 }
 
+/* Resume Section Styling */
+
+#resume ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+#resume li {
+  margin-bottom: 1rem;
+}
+
+#resume h3 {
+  margin-top: 2rem;
+  color: #00bfa5;
+}
+
 /* Contact Form Styling */
 
 form {
