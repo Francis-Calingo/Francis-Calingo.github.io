@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Francis Emmanuel Calingo | Aspiring Geospatial Data Scientist</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-link">About Me</a>
+  <a href="projects.html" class="nav-link">Projects</a>
+  <a href="resume.html" class="nav-link">Contact</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</nav>
+  
+<main>
+
+<section class="contact">
+    <h2>Contact Me</h2>
+
+	<form id="contact-form">
+    	<label for="from_name">Name:</label>
+    	<input type="text" id="from_name" name="from_name" required />
+
+	<label for="reply_to">Email:</label>
+    	<input type="email" id="reply_to" name="reply_to" required />
+
+    	<label for="message">Message:</label>
+    	<textarea id="message" name="message" required></textarea>
+
+    	<button type="submit">Send</button>
+
+  </form>
+
+<p id="form-status"></p>
+
+</section>
+
+  <! –– JS Comment ––>
+  
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("Francis-Calingo"); // Replace with your EmailJS User ID
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_francali", "template_17fok3j", this)
+      .then(() => {
+        document.getElementById("form-status").textContent = "✅ Message sent successfully!";
+        this.reset();
+      }, (error) => {
+        document.getElementById("form-status").textContent = "❌ Oops! Something went wrong.";
+        console.error('EmailJS error:', error);
+      });
+  });
+</script>
+
+
+</main>
+
+</body>
+</html>
