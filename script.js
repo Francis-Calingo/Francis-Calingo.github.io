@@ -1,40 +1,46 @@
-// Example: Highlight nav link on click
+// Highlight active nav link (minimalist Distill-style)
 document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", function() {
+  link.addEventListener("click", () => {
     document.querySelectorAll("nav a").forEach(l => l.classList.remove("active"));
-    this.classList.add("active");
+    link.classList.add("active");
   });
 });
 
-// Add interactive map
-var map = L.map('map').setView([43.65107, -79.347015], 10); // Toronto coords
+// Initialize Leaflet map (customized subtle tone)
+const map = L.map('map', {
+  center: [43.65107, -79.347015], // Toronto
+  zoom: 10,
+  scrollWheelZoom: false
+});
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
+  attribution: '&copy; OpenStreetMap contributors',
+  maxZoom: 18
 }).addTo(map);
 
-// Add dynamic tabs
-
+// Dynamic Tab Switching
 const tabLinks = document.querySelectorAll(".tab-link");
 const tabContents = document.querySelectorAll(".tab-content");
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
-    const tabId = this.getAttribute("data-tab");
 
-    // Remove 'active' from all tabs and contents
-    tabLinks.forEach(l => l.classList.remove("active"));
-    tabContents.forEach(c => c.classList.remove("active"));
+    const targetTab = link.dataset.tab;
 
-    // Add 'active' to the clicked tab and matching content
-    this.classList.add("active");
-    document.getElementById(tabId).classList.add("active");
+    tabLinks.forEach(tab => tab.classList.remove("active"));
+    tabContents.forEach(content => content.classList.remove("active"));
+
+    link.classList.add("active");
+    document.getElementById(targetTab).classList.add("active");
   });
 });
 
-// Enable dark mode
-
-const toggle = document.getElementById('theme-toggle');
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-});
+// Light/Dark Theme Toggle
+const toggleBtn = document.getElementById('theme-toggle');
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    toggleBtn.classList.toggle('active');
+  });
+}
