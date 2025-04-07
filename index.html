@@ -344,32 +344,28 @@ Scraping data from the Philippine Statistics Authority and linguistic data from 
   </script>
   </section>
 
-  <section id="recommended readings" class="tab-content">
-    <h2>Recommended Readings</h2>
-    <p>Email: your.email@example.com</p>
-    <p>GitHub: <a href="https://github.com/your-username" target="_blank">@your-username</a></p>
-  </section>
 
-
-  <section id="contact" class="tab-content">
-    <h2>Contact</h2>
-
+<section id="contact" class="tab-content">
 <section class="contact">
-  <h2>Contact Me</h2>
-  <form id="contact-form">
-    <label>Name:</label>
-    <input type="text" name="from_name" required />
+    <h2>Contact Me</h2>
 
-    <label>Email:</label>
-    <input type="email" name="reply_to" required />
+	<form id="contact-form">
+    	<label for="from_name">Name:</label>
+    	<input type="text" id="from_name" name="from_name" required />
 
-    <label>Message:</label>
-    <textarea name="message" required></textarea>
+	<label for="reply_to">Email:</label>
+    	<input type="email" id="reply_to" name="reply_to" required />
 
-    <button type="submit">Send</button>
+    	<label for="message">Message:</label>
+    	<textarea id="message" name="message" required></textarea>
+
+    	<button type="submit">Send</button>
+
   </form>
 
-  <p id="form-status"></p>
+<p id="form-status"></p>
+
+</section>
 
   <! –– JS Comment ––>
   
@@ -384,21 +380,19 @@ Scraping data from the Philippine Statistics Authority and linguistic data from 
 
     emailjs.sendForm("service_francali", "template_17fok3j", this)
       .then(() => {
-        document.getElementById("form-status").textContent = "Message sent successfully!";
+        document.getElementById("form-status").textContent = "✅ Message sent successfully!";
         this.reset();
       }, (error) => {
-        document.getElementById("form-status").textContent = "Oops! Something went wrong.";
-        console.error(error);
+        document.getElementById("form-status").textContent = "❌ Oops! Something went wrong.";
+        console.error('EmailJS error:', error);
       });
   });
 </script>
-  
-</section>
-    
+      
   </section>
 
   <footer>
-    <p>&copy; 2025 Your Name</p>
+    <p>&copy; 2025 Francis E. Calingo</p>
   </footer>
 
   <script src="script.js"></script>
