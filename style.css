@@ -148,58 +148,50 @@ form button {
 
 /* Style project entries */
 
-.project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   padding: 2rem 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.project-entry {
-  background-color: #ffffff;
+.project-card {
+  background-color: white;
   border-left: 5px solid #007acc;
-  padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-entry:hover {
-  transform: translateY(-5px);
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-.project-entry h3 {
+.project-card h3 {
   margin-top: 0;
   font-family: 'Merriweather', serif;
-}
-
-.project-entry h3 a {
   color: #007acc;
-  text-decoration: none;
 }
 
-.project-entry h3 a:hover {
-  text-decoration: underline;
-}
-
-.project-date {
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 0.5rem;
+.project-card p {
+  color: #444;
 }
 
 .project-btn {
   display: inline-block;
   margin-top: 1rem;
-  padding: 8px 16px;
+  padding: 8px 14px;
   background-color: #007acc;
   color: white;
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .project-btn:hover {
