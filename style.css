@@ -98,45 +98,6 @@ h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
-/* Dark mode support */
-
-body.dark {
-  background: #121212;
-  color: #f0f0f0;
-}
-
-body.dark .navbar {
-  background: #1e1e1e;
-  border-bottom: 2px solid #333;
-}
-
-body.dark .card {
-  background: #1e1e1e;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-body.dark .nav-link {
-  color: #bbb;
-}
-
-body.dark .nav-link:hover {
-  color: #4da8ff;
-}
-
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode a {
-  color: #90caf9;
-}
-
-body.dark-mode header,
-body.dark-mode .resume-card {
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-}
 
 /* RESUME SECTION STYLING */
 
