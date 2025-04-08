@@ -123,6 +123,21 @@ body.dark .nav-link:hover {
   color: #4da8ff;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #90caf9;
+}
+
+body.dark-mode header,
+body.dark-mode .resume-card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
 /* RESUME SECTION STYLING */
 
 section#resume {
