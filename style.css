@@ -46,16 +46,16 @@ h1, h2, h3 {
   color: #007acc;
 }
 
-/* Style cards */
+/* Style education cards */
 
-.grid-container {
+.education-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   padding: 1rem;
 }
 
-.card {
+.education-card {
   background-color: #fff;
   border-radius: 12px;
   padding: 1rem;
@@ -63,7 +63,7 @@ h1, h2, h3 {
   transition: transform 0.2s ease;
 }
 
-.card:hover {
+.education-card:hover {
   transform: translateY(-5px);
 }
 
