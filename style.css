@@ -284,3 +284,20 @@ form button {
 form button:hover {
   background-color: #003d82;
 }
+
+.project-tags {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #e6f2ff;
+  color: #007acc;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
