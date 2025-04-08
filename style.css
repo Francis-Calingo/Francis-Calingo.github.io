@@ -1,7 +1,7 @@
 /*Set horizontal margins*/
 
 main {
-  max-width: 500px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 1rem;
 }
