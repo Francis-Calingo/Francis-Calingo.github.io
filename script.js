@@ -92,17 +92,35 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
     territoryLayer = L.geoJSON(data, {
-      style: {
-        color: '#3e64ff', // theme accent
-        weight: 2,
-        fillColor: '#dce4ff', // accent-light
-        fillOpacity: 0.2
+      style: function (feature) {
+        const name = feature.properties.Name || "Indigenous Territory";
+        return {
+          color: '#3e64ff', // consistent outline
+          weight: 1.5,
+          fillColor: getColorForName(name), // dynamic pastel fill
+          fillOpacity: 0.25
+        };
       },
       onEachFeature: function (feature, layer) {
         const name = feature.properties.Name || "Indigenous Territory";
-        layer.bindPopup(`<strong>${name}</strong>`);
+
+        // Add a permanent tooltip (on hover)
+        layer.bindTooltip(name, {
+          sticky: true,
+          direction: "top",
+          className: "territory-tooltip"
+        });
       }
     });
+
+    // Layer toggle control
+    L.control.layers({}, { "Territories by Land": territoryLayer }, {
+      collapsed: false,
+      position: "topright"
+    }).addTo(map);
+
+    territoryLayer.addTo(map);
+  });
 
     // Add Leaflet layer control
     const baseLayers = {}; // if you use basemaps like satellite or grayscale
@@ -118,6 +136,16 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
     // Optionally show it on load:
     territoryLayer.addTo(map);
   });
+
+function getColorForName(name) {
+  // Simple hash → HSL color
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const hue = hash % 360;
+  return `hsl(${hue}, 60%, 75%)`; // Soft pastel tone
+}
 
 
 // Dynamic Tab Switching
