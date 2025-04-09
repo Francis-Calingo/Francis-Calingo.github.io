@@ -84,29 +84,19 @@ L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
 
 // Territories Layer on Map
 
-// Fetch and add Territory GeoJSON from Native Land
-function getColorForName(name) {
-  // Simple hash → HSL color
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const hue = hash % 360;
-  return `hsl(${hue}, 60%, 75%)`; // Soft pastel tone
-}
+// Create an empty territory layer group
+let territoryLayer = L.layerGroup();
 
+// Fetch and add Territory GeoJSON from Native Land
 fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
-    const territoryLayer = L.geoJSON(data, {
-      style: function (feature) {
-        const name = feature.properties.Name || "Indigenous Territory";
-        return {
-          color: '#3e64ff', // Outline color (theme accent)
-          weight: 1.5,
-          fillColor: getColorForName(name), // Unique fill
-          fillOpacity: 0.25
-        };
+    territoryLayer = L.geoJSON(data, {
+      style: {
+        color: '#3e64ff', // theme accent
+        weight: 2,
+        fillColor: '#dce4ff', // accent-light
+        fillOpacity: 0.2
       },
       onEachFeature: function (feature, layer) {
         const name = feature.properties.Name || "Indigenous Territory";
@@ -114,11 +104,18 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
       }
     });
 
-    L.control.layers({}, { "Territories by Land": territoryLayer }, {
+    // Add Leaflet layer control
+    const baseLayers = {}; // if you use basemaps like satellite or grayscale
+    const overlays = {
+      "Territories by Land": territoryLayer
+    };
+
+    L.control.layers(baseLayers, overlays, {
       collapsed: false,
       position: "topright"
     }).addTo(map);
 
+    // Optionally show it on load:
     territoryLayer.addTo(map);
   });
 
