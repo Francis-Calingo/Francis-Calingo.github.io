@@ -57,19 +57,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // JavaScript for Light and Dark Mode
-const toggleBtn = document.getElementById('theme-toggle');
-const body = document.body;
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
 
-// Load saved theme
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark');
-  toggleBtn.textContent = '☀️';
-}
+  if (!toggleBtn) return; // Avoid errors if button isn't found
 
-// Toggle on click
-toggleBtn.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  const isDark = body.classList.contains('dark');
-  toggleBtn.textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  // Load saved theme
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️';
+  }
+
+  // Toggle on click
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
 });
