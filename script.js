@@ -18,18 +18,33 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18
 }).addTo(map);
 
+// Create custom icons for education and work
+var educationIcon = L.icon({
+  iconUrl: 'https://iconduck.com/icons/115110/books-horizontal', // Custom icon URL (you can use a simple colored circle or an image)
+  iconSize: [30, 30], // Set size of the icon
+  iconAnchor: [15, 30], // Anchor the icon in the center of the marker
+  popupAnchor: [0, -30] // Popup offset
+});
+
+var workIcon = L.icon({
+  iconUrl: 'https://iconduck.com/emojis/37449/briefcase', // Custom icon URL for work
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+
 // Add a marker at York University with a popup
-L.marker([43.7738, -79.5019]).addTo(map)
+L.marker([43.7738, -79.5019], {icon: educationIcon}).addTo(map)
   .bindPopup("<b>York University</b><br>HBSc. in Applied Mathematics and Statistics (Graduated June 2022)") // Popup content
   .openPopup();
 
 // Add a marker at York University (Bethune College) with a popup
-L.marker([43.77317, -79.50881]).addTo(map)
+L.marker([43.77317, -79.50881],{icon: workIcon})).addTo(map)
   .bindPopup("<b>York University</b><br> Academic Assistance Peer Lead (May 2019-May 2020)") // Popup content
   .openPopup();
 
 // Add a marker at Great Canadian Casino Resort Toronto with a popup
-L.marker([43.71521, -79.60377]).addTo(map)
+L.marker([43.71521, -79.60377],{icon: workIcon})).addTo(map)
   .bindPopup("<b>Great Canadian Casino Resort Toronto</b><br>Site Auditor (August 2022-August 2024)") // Popup content
   .openPopup();
 
