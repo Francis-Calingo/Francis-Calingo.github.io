@@ -88,6 +88,17 @@ L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
 let territoryLayer = L.layerGroup();
 
 // Fetch and add Territory GeoJSON from Native Land
+
+function getColorForName(name) {
+  // Simple hash → HSL color
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const hue = hash % 360;
+  return `hsl(${hue}, 60%, 75%)`; // Soft pastel tone
+}
+
 fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
@@ -148,16 +159,6 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
     // Optionally show it on load:
     territoryLayer.addTo(map);
   });
-
-function getColorForName(name) {
-  // Simple hash → HSL color
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const hue = hash % 360;
-  return `hsl(${hue}, 60%, 75%)`; // Soft pastel tone
-}
 
 
 // Dynamic Tab Switching
