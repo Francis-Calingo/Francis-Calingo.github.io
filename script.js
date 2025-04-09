@@ -85,11 +85,6 @@ L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
 // Territories Layer on Map
 
 // Fetch and add Territory GeoJSON from Native Land
-
-// Create an empty territory layer group
-let territoryLayer = L.layerGroup();
-
-// Fetch and add Territory GeoJSON from Native Land
 function getColorForName(name) {
   // Simple hash → HSL color
   let hash = 0;
@@ -103,7 +98,7 @@ function getColorForName(name) {
 fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
-    territoryLayer = L.geoJSON(data, {
+    const territoryLayer = L.geoJSON(data, {
       style: function (feature) {
         const name = feature.properties.Name || "Indigenous Territory";
         return {
@@ -126,22 +121,6 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
 
     territoryLayer.addTo(map);
   });
-
-    // Add Leaflet layer control
-    const baseLayers = {}; // if you use basemaps like satellite or grayscale
-    const overlays = {
-      "Territories by Land": territoryLayer
-    };
-
-    L.control.layers(baseLayers, overlays, {
-      collapsed: false,
-      position: "topright"
-    }).addTo(map);
-
-    // Optionally show it on load:
-    territoryLayer.addTo(map);
-  });
-
 
 // Dynamic Tab Switching
 const tabLinks = document.querySelectorAll(".tab-link");
