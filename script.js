@@ -18,6 +18,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18
 }).addTo(map);
 
+// Add a marker at York University with a popup
+L.marker([43.7738, -79.5019]).addTo(map)
+  .bindPopup("<b>York University</b><br>HBSc in Applied Mathematics") // Popup content
+  .openPopup();
+
 // Dynamic Tab Switching
 const tabLinks = document.querySelectorAll(".tab-link");
 const tabContents = document.querySelectorAll(".tab-content");
