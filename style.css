@@ -13,6 +13,18 @@
   --text-muted: #777;
 }
 
+body.dark {
+  --background: #121212;
+  --text: #f0f0f0;
+  --accent: #3e64ff;
+  --accent-light: #263154;
+  --accent-hover: #5b82ff;
+  --highlight: #ffa07a;
+  --card-bg: #1e1e1e;
+  --border: #333;
+  --text-muted: #aaa;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--background);
