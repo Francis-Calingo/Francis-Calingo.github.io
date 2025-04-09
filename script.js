@@ -86,6 +86,10 @@ L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
 
 // Fetch and add Territory GeoJSON from Native Land
 
+// Create an empty territory layer group
+let territoryLayer = L.layerGroup();
+
+// Fetch and add Territory GeoJSON from Native Land
 function getColorForName(name) {
   // Simple hash → HSL color
   let hash = 0;
@@ -99,50 +103,43 @@ function getColorForName(name) {
 fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
-    // Create the territoryLayer using the fetched data
-    const territoryLayer = L.geoJSON(data, {
+    territoryLayer = L.geoJSON(data, {
       style: function (feature) {
         const name = feature.properties.Name || "Indigenous Territory";
         return {
-          color: '#3e64ff', // consistent outline
+          color: '#3e64ff', // Outline color (theme accent)
           weight: 1.5,
-          fillColor: getColorForName(name), // dynamic pastel fill
+          fillColor: getColorForName(name), // Unique fill
           fillOpacity: 0.25
         };
       },
       onEachFeature: function (feature, layer) {
         const name = feature.properties.Name || "Indigenous Territory";
-        const slug = feature.properties.Slug || "unknown";
-        const lat = layer.getBounds().getCenter().lat.toFixed(5);
-        const lng = layer.getBounds().getCenter().lng.toFixed(5);
-
-        const tooltipContent = `
-          <div>
-            <strong>${name}</strong><br>
-            <small>Slug: <code>${slug}</code></small><br>
-            <a href="https://whose.land/en/location/${lat},${lng}" target="_blank">
-              View on Whose.Land →
-            </a>
-          </div>
-        `;
-        layer.bindTooltip(tooltipContent, {
-          sticky: true,
-          direction: "top",
-          className: "territory-tooltip"
-        });
+        layer.bindPopup(`<strong>${name}</strong>`);
       }
     });
 
-    // Add layer control and territoryLayer to the map
     L.control.layers({}, { "Territories by Land": territoryLayer }, {
       collapsed: false,
       position: "topright"
     }).addTo(map);
 
-    territoryLayer.addTo(map); // Add the territory layer to the map
-  })
-  .catch(error => {
-    console.error("Error loading territory data:", error);
+    territoryLayer.addTo(map);
+  });
+
+    // Add Leaflet layer control
+    const baseLayers = {}; // if you use basemaps like satellite or grayscale
+    const overlays = {
+      "Territories by Land": territoryLayer
+    };
+
+    L.control.layers(baseLayers, overlays, {
+      collapsed: false,
+      position: "topright"
+    }).addTo(map);
+
+    // Optionally show it on load:
+    territoryLayer.addTo(map);
   });
 
 
