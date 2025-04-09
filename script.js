@@ -9,7 +9,7 @@ document.querySelectorAll("nav a").forEach(link => {
 // Initialize Leaflet map (customized subtle tone)
 const map = L.map('map', {
   center: [43.65107, -79.347015], // Toronto
-  zoom: 50,
+  zoom: 3,
   scrollWheelZoom: false
 });
 
