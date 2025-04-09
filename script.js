@@ -82,6 +82,43 @@ L.marker([45.42315506167389, -75.70029169984227], {icon: workIcon}).addTo(map)
 L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
   .bindPopup("<b>Home Depot Canada</b><br>Front End Associate-Lot, Cashier, Customer Service) (September 2017–August 2022)");
 
+// Territories Layer on Map
+
+// Create an empty territory layer group
+let territoryLayer = L.layerGroup();
+
+// Fetch and add Territory GeoJSON from Native Land
+fetch("https://native-land.ca/api/index.php?maps=territories")
+  .then(res => res.json())
+  .then(data => {
+    territoryLayer = L.geoJSON(data, {
+      style: {
+        color: '#3e64ff', // theme accent
+        weight: 2,
+        fillColor: '#dce4ff', // accent-light
+        fillOpacity: 0.2
+      },
+      onEachFeature: function (feature, layer) {
+        const name = feature.properties.Name || "Indigenous Territory";
+        layer.bindPopup(`<strong>${name}</strong>`);
+      }
+    });
+
+    // Add Leaflet layer control
+    const baseLayers = {}; // if you use basemaps like satellite or grayscale
+    const overlays = {
+      "Territories by Land": territoryLayer
+    };
+
+    L.control.layers(baseLayers, overlays, {
+      collapsed: false,
+      position: "topright"
+    }).addTo(map);
+
+    // Optionally show it on load:
+    territoryLayer.addTo(map);
+  });
+
 
 // Dynamic Tab Switching
 const tabLinks = document.querySelectorAll(".tab-link");
