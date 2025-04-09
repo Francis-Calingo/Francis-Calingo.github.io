@@ -45,6 +45,23 @@ h1, h2, h3 {
   color: var(--text);
 }
 
+/* Light and Dark Toggle */
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0 1rem;
+  color: var(--text);
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.2);
+}
+
 /* Navigation */
 .navbar {
   display: flex;
