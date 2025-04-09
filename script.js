@@ -103,13 +103,25 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
       },
       onEachFeature: function (feature, layer) {
         const name = feature.properties.Name || "Indigenous Territory";
+  const slug = feature.properties.Slug || "unknown";
+  const lat = layer.getBounds().getCenter().lat.toFixed(5);
+  const lng = layer.getBounds().getCenter().lng.toFixed(5);
 
-        // Add a permanent tooltip (on hover)
-        layer.bindTooltip(name, {
-          sticky: true,
-          direction: "top",
-          className: "territory-tooltip"
-        });
+  const tooltipContent = `
+    <div>
+      <strong>${name}</strong><br>
+      <small>Slug: <code>${slug}</code></small><br>
+      <a href="https://whose.land/en/location/${lat},${lng}" target="_blank">
+        View on Whose.Land →
+      </a>
+    </div>
+  `;
+
+  layer.bindTooltip(tooltipContent, {
+    sticky: true,
+    direction: "top",
+    className: "territory-tooltip"
+  });
       }
     });
 
