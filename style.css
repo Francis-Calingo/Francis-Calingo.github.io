@@ -133,6 +133,24 @@ h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
+/* Leaflet Map Toggle */
+
+.leaflet-control-layers {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.leaflet-control-layers label {
+  color: var(--text);
+  margin: 4px 0;
+  display: block;
+}
+
 /* Resume */
 section#resume {
   max-width: 900px;
