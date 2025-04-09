@@ -99,6 +99,7 @@ function getColorForName(name) {
 fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
+    // Create the territoryLayer using the fetched data
     const territoryLayer = L.geoJSON(data, {
       style: function (feature) {
         const name = feature.properties.Name || "Indigenous Territory";
@@ -124,7 +125,6 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
             </a>
           </div>
         `;
-
         layer.bindTooltip(tooltipContent, {
           sticky: true,
           direction: "top",
@@ -133,17 +133,18 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
       }
     });
 
-    // Layer toggle control
+    // Add layer control and territoryLayer to the map
     L.control.layers({}, { "Territories by Land": territoryLayer }, {
       collapsed: false,
       position: "topright"
     }).addTo(map);
 
-    territoryLayer.addTo(map);
+    territoryLayer.addTo(map); // Add the territory layer to the map
   })
   .catch(error => {
     console.error("Error loading territory data:", error);
   });
+
 
 // Dynamic Tab Switching
 const tabLinks = document.querySelectorAll(".tab-link");
