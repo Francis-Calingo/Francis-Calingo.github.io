@@ -9,7 +9,7 @@ document.querySelectorAll("nav a").forEach(link => {
 // Initialize Leaflet map (customized subtle tone)
 const map = L.map('map', {
   center: [43.65107, -79.347015], // Toronto
-  zoom: 10,
+  zoom: 50,
   scrollWheelZoom: false
 });
 
@@ -20,7 +20,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Add a marker at York University with a popup
 L.marker([43.7738, -79.5019]).addTo(map)
-  .bindPopup("<b>York University</b><br>HBSc in Applied Mathematics") // Popup content
+  .bindPopup("<b>York University</b><br>HBSc. in Applied Mathematics and Statistics (Graduated June 2022)") // Popup content
+  .openPopup();
+
+// Add a marker at York University (Bethune College) with a popup
+L.marker([43.77317, -79.50881]).addTo(map)
+  .bindPopup("<b>York University</b><br> Academic Assistance Peer Lead (May 2019-May 2020)") // Popup content
+  .openPopup();
+
+// Add a marker at Great Canadian Casino Resort Toronto with a popup
+L.marker([43.71521, -79.60377]).addTo(map)
+  .bindPopup("<b>Great Canadian Casino Resort Toronto</b><br>Site Auditor (August 2022-August 2024)") // Popup content
   .openPopup();
 
 // Dynamic Tab Switching
