@@ -20,14 +20,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Create custom icons for education and work
 var educationIcon = L.icon({
-  iconUrl: 'https://iconduck.com/icons/115110/books-horizontal', // Custom icon URL (you can use a simple colored circle or an image)
-  iconSize: [30, 30], // Set size of the icon
-  iconAnchor: [15, 30], // Anchor the icon in the center of the marker
-  popupAnchor: [0, -30] // Popup offset
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991148.png', // valid PNG
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
 });
 
 var workIcon = L.icon({
-  iconUrl: 'https://iconduck.com/emojis/37449/briefcase', // Custom icon URL for work
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png', // valid PNG
   iconSize: [30, 30],
   iconAnchor: [15, 30],
   popupAnchor: [0, -30]
@@ -35,18 +35,16 @@ var workIcon = L.icon({
 
 // Add a marker at York University with a popup
 L.marker([43.7738, -79.5019], {icon: educationIcon}).addTo(map)
-  .bindPopup("<b>York University</b><br>HBSc. in Applied Mathematics and Statistics (Graduated June 2022)") // Popup content
-  .openPopup();
+  .bindPopup("<b>York University</b><br>HBSc. in Applied Mathematics and Statistics (Graduated June 2022)");
 
-// Add a marker at York University (Bethune College) with a popup
-L.marker([43.77317, -79.50881],{icon: workIcon})).addTo(map)
-  .bindPopup("<b>York University</b><br> Academic Assistance Peer Lead (May 2019-May 2020)") // Popup content
-  .openPopup();
+// Add a marker at Bethune College (York U) with a popup
+L.marker([43.77317, -79.50881], {icon: workIcon}).addTo(map)
+  .bindPopup("<b>York University</b><br>Academic Assistance Peer Lead (May 2019–May 2020)");
 
 // Add a marker at Great Canadian Casino Resort Toronto with a popup
-L.marker([43.71521, -79.60377],{icon: workIcon})).addTo(map)
-  .bindPopup("<b>Great Canadian Casino Resort Toronto</b><br>Site Auditor (August 2022-August 2024)") // Popup content
-  .openPopup();
+L.marker([43.71521, -79.60377], {icon: workIcon}).addTo(map)
+  .bindPopup("<b>Great Canadian Casino Resort Toronto</b><br>Site Auditor (August 2022–August 2024)");
+
 
 // Dynamic Tab Switching
 const tabLinks = document.querySelectorAll(".tab-link");
