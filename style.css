@@ -1,39 +1,39 @@
-/* Horizontal margins for main content */
+/* Font & Layout Setup */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --background: #fefefe;
+  --text: #2c3e50;
+  --accent: #3e64ff;
+  --accent-light: #dce4ff;
+  --accent-hover: #2a4de0;
+  --highlight: #ff7f50;
+  --card-bg: #ffffff;
+  --border: #eeeeee;
+  --text-muted: #777;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
-
-/* Color theme (Slate Blue + Ivory) */
-:root {
-  --background: #fefefe;
-  --text: #2c3e50;
-  --accent: #3e64ff;
-  --accent-light: #dce4ff;
-  --card-bg: #ffffff;
-  --border: #eeeeee;
-}
-
-/* Base styles */
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--text);
-  background-color: var(--background);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
 h1, h2, h3 {
   font-family: 'Merriweather', serif;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
-/* Navigation bar */
+/* Navigation */
 .navbar {
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ h1, h2, h3 {
 .nav-link {
   font-weight: bold;
   text-decoration: none;
-  color: #444;
+  color: var(--text);
   transition: color 0.3s ease;
 }
 
@@ -54,7 +54,7 @@ h1, h2, h3 {
   color: var(--accent);
 }
 
-/* Education grid/cards */
+/* Education */
 .education-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -75,7 +75,7 @@ h1, h2, h3 {
   transform: translateY(-5px);
 }
 
-/* About section */
+/* About Section */
 .about-container {
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +104,7 @@ h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
-/* Resume section */
+/* Resume */
 section#resume {
   max-width: 900px;
   margin: 2rem auto;
@@ -112,10 +112,8 @@ section#resume {
 }
 
 #resume h2 {
-  font-family: 'Merriweather', serif;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: #1a1a1a;
   text-align: center;
   position: relative;
 }
@@ -151,18 +149,18 @@ section#resume {
 }
 
 .resume-block h3:hover {
-  color: #ff7f50;
+  color: var(--highlight);
 }
 
 .resume-block p {
   margin: 0.25rem 0;
   font-size: 0.95rem;
-  color: #444;
+  color: var(--text);
 }
 
 .resume-block .resume-date {
   font-size: 0.85rem;
-  color: #777;
+  color: var(--text-muted);
   margin-bottom: 0.75rem;
 }
 
@@ -191,7 +189,7 @@ section#resume {
   }
 }
 
-/* Contact form */
+/* Contact Form */
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -209,7 +207,7 @@ form input, form textarea {
   font-size: 1rem;
   margin-top: 5px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
 }
 
 form button {
@@ -223,10 +221,10 @@ form button {
 }
 
 form button:hover {
-  background-color: #003d82;
+  background-color: var(--accent-hover);
 }
 
-/* Project cards */
+/* Projects */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -257,7 +255,7 @@ form button:hover {
 }
 
 .project-card p {
-  color: #444;
+  color: var(--text);
 }
 
 .project-thumb {
@@ -283,10 +281,9 @@ form button:hover {
 }
 
 .project-btn:hover {
-  background-color: #0056c1;
+  background-color: var(--accent-hover);
 }
 
-/* Project tags */
 .project-tags {
   margin-top: 0.75rem;
   display: flex;
