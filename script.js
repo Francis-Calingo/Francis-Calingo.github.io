@@ -130,13 +130,14 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
           className: "territory-tooltip"
         });
         // 👉 Add hover style effects here:
-  layer.on('mouseover', function () {
-    this.setStyle({ weight: 3, color: '#1f3fbf' }); // darker accent
-  });
+layer.on('mouseover', function () {
+  this.setStyle({ weight: 3, color: '#1f3fbf' });
+  this.bringToFront(); // make sure it's on top
+});
 
-  layer.on('mouseout', function () {
-    this.setStyle({ weight: 1.5, color: '#3e64ff' }); // original accent
-  });
+layer.on('mouseout', function () {
+  this.setStyle({ weight: 1.5, color: '#3e64ff' });
+});
       }
     });
 
