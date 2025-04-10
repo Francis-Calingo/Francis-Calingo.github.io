@@ -84,6 +84,15 @@ L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
 
 // Territories Layer on Map
 
+function getColorForName(name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const hue = Math.abs(hash) % 360; // unique hue from hash
+  return `hsl(${hue}, 60%, 85%)`;    // soft pastel style
+}
+
 // Create an empty territory layer group
 let territoryLayer = L.layerGroup();
 
@@ -91,31 +100,47 @@ let territoryLayer = L.layerGroup();
 fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
-    territoryLayer = L.geoJSON(data, {
-      style: {
-        color: '#3e64ff', // theme accent
-        weight: 2,
-        fillColor: '#dce4ff', // accent-light
-        fillOpacity: 0.2
+    const territoryLayer = L.geoJSON(data, {
+      style: function (feature) {
+        const name = feature.properties.Name || "Territory";
+        return {
+          color: '#3e64ff',           // Outline color (theme accent)
+          weight: 1.5,
+          fillColor: getColorForName(name),
+          fillOpacity: 0.3
+        };
       },
       onEachFeature: function (feature, layer) {
         const name = feature.properties.Name || "Indigenous Territory";
-        layer.bindPopup(`<strong>${name}</strong>`);
+        const lat = layer.getBounds().getCenter().lat.toFixed(5);
+        const lng = layer.getBounds().getCenter().lng.toFixed(5);
+
+        const tooltipContent = `
+          <div>
+            <strong>${name}</strong><br>
+            <a href="https://whose.land/en/location/${lat},${lng}" target="_blank">
+              View on Whose.Land →
+            </a>
+          </div>
+        `;
+
+        layer.bindTooltip(tooltipContent, {
+          sticky: true,
+          direction: "top",
+          className: "territory-tooltip"
+        });
       }
     });
 
-    // Add Leaflet layer control
-    const baseLayers = {}; // if you use basemaps like satellite or grayscale
-    const overlays = {
-      "Territories by Land": territoryLayer
-    };
-
-    L.control.layers(baseLayers, overlays, {
+    // Layer control
+    L.control.layers({}, {
+      "Indigenous Territories": territoryLayer
+    }, {
       collapsed: false,
       position: "topright"
     }).addTo(map);
 
-    // Optionally show it on load:
+    // Show the layer by default
     territoryLayer.addTo(map);
   });
 
