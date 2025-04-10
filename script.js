@@ -107,7 +107,7 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
           color: '#3e64ff',           // Outline color (theme accent)
           weight: 1.5,
           fillColor: getColorForName(name),
-          fillOpacity: 0.3
+          fillOpacity: 0.45
         };
       },
       onEachFeature: function (feature, layer) {
@@ -129,6 +129,14 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
           direction: "top",
           className: "territory-tooltip"
         });
+        // 👉 Add hover style effects here:
+  layer.on('mouseover', function () {
+    this.setStyle({ weight: 3, color: '#1f3fbf' }); // darker accent
+  });
+
+  layer.on('mouseout', function () {
+    this.setStyle({ weight: 1.5, color: '#3e64ff' }); // original accent
+  });
       }
     });
 
