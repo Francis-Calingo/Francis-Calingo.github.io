@@ -90,7 +90,7 @@ function getColorForName(name) {
     hash = name.charCodeAt(i) + ((hash << 5) - hash);
   }
   const hue = Math.abs(hash) % 360; // unique hue from hash
-  return `hsl(${hue}, 60%, 85%)`;    // soft pastel style
+  return `hsl(${hue}, 75%, 85%)`;    // soft pastel style
 }
 
 // Create an empty territory layer group
