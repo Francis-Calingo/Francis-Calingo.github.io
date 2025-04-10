@@ -151,6 +151,28 @@ h1, h2, h3 {
   display: block;
 }
 
+.leaflet-tooltip.territory-tooltip {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 220px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-tooltip.territory-tooltip a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.leaflet-tooltip.territory-tooltip a:hover {
+  text-decoration: underline;
+}
+
 /* Resume */
 section#resume {
   max-width: 900px;
