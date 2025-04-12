@@ -266,6 +266,13 @@ section#resume {
 }
 
 /* Contact Form */
+#contact-page h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
 form {
   max-width: 600px;
   margin: 0 auto;
