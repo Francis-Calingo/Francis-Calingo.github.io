@@ -294,6 +294,14 @@ form button:hover {
 }
 
 /* Projects */
+
+#projects h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
