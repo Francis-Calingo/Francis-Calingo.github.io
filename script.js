@@ -172,8 +172,36 @@ tabLinks.forEach(link => {
 });
 
 
-// JavaScript to add visibility on scroll
-document.addEventListener("DOMContentLoaded", function() {
+
+//DOM Content Loaded
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 🔹 Highlight nav link
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.querySelectorAll("nav a").forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+
+  // 🔹 Dynamic tabs
+  const tabLinks = document.querySelectorAll(".tab-link");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetTab = link.dataset.tab;
+
+      tabLinks.forEach(tab => tab.classList.remove("active"));
+      tabContents.forEach(content => content.classList.remove("active"));
+
+      link.classList.add("active");
+      document.getElementById(targetTab).classList.add("active");
+    });
+  });
+
+  // 🔹 Resume scroll animation
   const resumeBlocks = document.querySelectorAll('.resume-block');
 
   function checkVisibility() {
@@ -188,40 +216,33 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   window.addEventListener('scroll', checkVisibility);
-  checkVisibility(); // To check visibility when page loads
-});
+  checkVisibility();
 
-//Recommended Readings Toggle
-
-document.addEventListener('DOMContentLoaded', () => {
+  // 🔹 Toggle review 
   document.querySelectorAll('.toggle-review').forEach(button => {
     button.addEventListener('click', () => {
       const card = button.closest('.reading-card');
+      if (!card) return;
       card.classList.toggle('open');
       button.textContent = card.classList.contains('open') ? 'Hide Review' : 'Show Review';
     });
   });
-});
 
-
-// JavaScript for Light and Dark Mode
-document.addEventListener("DOMContentLoaded", function () {
+  // 🔹 Dark/light mode toggle
   const toggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
 
-  if (!toggleBtn) return; // Avoid errors if button isn't found
+  if (toggleBtn) {
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+    }
 
-  // Load saved theme
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
-    toggleBtn.textContent = '☀️';
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
   }
-
-  // Toggle on click
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    toggleBtn.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
 });
