@@ -369,3 +369,37 @@ form button:hover {
   font-weight: 600;
   white-space: nowrap;
 }
+
+/* Stylings for Recommended Readings Page */
+
+#readings h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.reading-section {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reading-section h3 {
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.reading-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.reading-section li {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
