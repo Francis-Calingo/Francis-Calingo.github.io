@@ -193,14 +193,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Recommended Readings Toggle
 
-document.querySelectorAll('.toggle-review').forEach(button => {
-  button.addEventListener('click', () => {
-    const card = button.closest('.reading-card');
-    card.classList.toggle('open');
-    button.textContent = card.classList.contains('open') ? 'Hide Review' : 'Show Review';
-  });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.toggle-review').forEach(button => {
     button.addEventListener('click', () => {
