@@ -246,3 +246,15 @@ function myFunction() {
     x.style.display = "none";
   }
 }
+
+function toggleReview(button) {
+      var review = button.nextElementSibling;
+
+      if (review.style.display === "none" || review.style.display === "") {
+        review.style.display = "block";
+        button.textContent = "Hide Review";
+      } else {
+        review.style.display = "none";
+        button.textContent = "Show Review";
+      }
+    }
