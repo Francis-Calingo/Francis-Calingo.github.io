@@ -237,10 +237,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 function myFunction() {
   var x = document.getElementById("review-id");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
   } else {
     x.style.display = "none";
   }
