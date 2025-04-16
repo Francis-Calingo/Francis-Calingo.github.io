@@ -218,16 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', checkVisibility);
   checkVisibility();
 
-  // 🔹 Toggle review 
-  document.querySelectorAll('.toggle-review').forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.reading-card');
-      if (!card) return;
-      card.classList.toggle('open');
-    });
-  });
-});
-
   // 🔹 Dark/light mode toggle
   const toggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
