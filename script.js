@@ -218,23 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', checkVisibility);
   checkVisibility();
 
-    // 🔹 Readings scroll animation
-  const readingCard = document.querySelectorAll('.reading-card');
-
-  function checkVisibility() {
-    const triggerBottom = window.innerHeight * 0.8;
-
-    readingCard.forEach(block => {
-      const blockTop = block.getBoundingClientRect().top;
-      if (blockTop < triggerBottom) {
-        block.classList.add('visible');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', checkVisibility);
-  checkVisibility();
-
   // 🔹 Dark/light mode toggle
   const toggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
