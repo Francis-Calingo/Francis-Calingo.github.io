@@ -447,7 +447,7 @@ form button:hover {
   color: var(--text);
 }
 
-.review-button {
+.toggle-button {
   display: inline-block;
   margin-top: 1rem;
   padding: 8px 14px;
