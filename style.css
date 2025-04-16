@@ -448,29 +448,24 @@ form button:hover {
   font-weight: 600;
   color: var(--accent);
   cursor: pointer;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-  padding: 0;
-  transition: color 0.3s ease;
-}
-
-.toggle-review:hover {
-  text-decoration: underline;
 }
 
 .reading-card.open .toggle-review::before {
   content: "▼";
+  margin-right: 0.5rem;
 }
 
 .reading-card:not(.open) .toggle-review::before {
   content: "▶";
+  margin-right: 0.5rem;
 }
 
 .reading-review {
-  margin-top: 1rem;
   display: none;
+  margin-top: 1rem;
   font-size: 0.9rem;
   color: var(--text);
 }
@@ -478,4 +473,3 @@ form button:hover {
 .reading-card.open .reading-review {
   display: block;
 }
-
