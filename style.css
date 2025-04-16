@@ -441,35 +441,9 @@ form button:hover {
   position: relative;
 }
 
-.toggle-review {
-  background: none;
-  border: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--accent);
-  cursor: pointer;
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.reading-card.open .toggle-review::before {
-  content: "▼";
-  margin-right: 0.5rem;
-}
-
-.reading-card:not(.open) .toggle-review::before {
-  content: "▶";
-  margin-right: 0.5rem;
-}
-
 .reading-review {
   display: none;
   margin-top: 1rem;
   font-size: 0.9rem;
   color: var(--text);
-}
-
-.reading-card.open .reading-review {
-  display: block;
 }
