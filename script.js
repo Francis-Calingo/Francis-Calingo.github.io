@@ -237,16 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-function myFunction() {
-  var x = document.getElementById("review-id");
-  if (x.style.display === "none" || x.style.display === "") {
-        x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
 function toggleReview(button) {
       var review = button.nextElementSibling;
 
@@ -258,3 +248,14 @@ function toggleReview(button) {
         button.textContent = "Hide Review";
       }
     }
+
+.reading-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.reading-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
