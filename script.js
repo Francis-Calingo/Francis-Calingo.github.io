@@ -224,9 +224,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const card = button.closest('.reading-card');
       if (!card) return;
       card.classList.toggle('open');
-      button.textContent = card.classList.contains('open') ? 'Hide Review' : 'Show Review';
     });
   });
+});
 
   // 🔹 Dark/light mode toggle
   const toggleBtn = document.getElementById('theme-toggle');
