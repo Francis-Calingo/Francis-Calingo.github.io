@@ -236,3 +236,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function myFunction() {
+  var x = document.getElementById("reading-review");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
