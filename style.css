@@ -45,7 +45,7 @@ h1, h2, h3 {
   color: var(--text);
 }
 
-/* Light and Dark Toggle */
+/* Light and Dark Toggle Button */
 
 #theme-toggle {
   background: none;
@@ -60,6 +60,20 @@ h1, h2, h3 {
 
 #theme-toggle:hover {
   transform: scale(1.2);
+}
+
+/* Dark Mode Support for Hyperlinks */
+
+body.dark a {
+  color: #8ab4f8; /* a soft, readable blue in dark mode */
+}
+
+body.dark a:hover {
+  color: #a4c8ff; /* slightly lighter on hover */
+}
+
+body.dark a:visited {
+  color: #c58af9; /* optional: distinct visited link color */
 }
 
 /* Navigation */
