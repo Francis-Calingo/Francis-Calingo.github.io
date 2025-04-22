@@ -187,6 +187,22 @@ body.dark a:visited {
   text-decoration: underline;
 }
 
+/* Dark mode for Leaflet layer control */
+body.dark .leaflet-control-layers {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .leaflet-control-layers label {
+  color: #f0f0f0;
+}
+
+body.dark .leaflet-control-layers-separator {
+  border-top: 1px solid #555;
+}
+
 /* Resume */
 #resume-page h2 {
   text-align: center;
