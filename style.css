@@ -422,6 +422,16 @@ form button:hover {
   white-space: nowrap;
 }
 
+/* Dark mode: View Project button text */
+body.dark .project-btn {
+  color: #ffffff; /* bright white for contrast */
+}
+
+/* Dark mode: Project tag text */
+body.dark .tag {
+  color: #ffffff; /* or use a soft off-white like #f0f0f0 */
+}
+
 /* Stylings for Recommended Readings Page */
 
 #readings h2 {
