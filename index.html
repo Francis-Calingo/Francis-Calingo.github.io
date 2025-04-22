@@ -28,7 +28,7 @@
 
   </header>
 
-<button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+<button id="theme-toggle" onclick="toggleDarkMode()">🌙 Toggle Light/Dark Theme</button>
 
 <section id="about" class="tab-content active about-section">
   <div class="about-container">
@@ -97,6 +97,23 @@
   <footer>
     <p>&copy; 2025 Francis E. Calingo</p>
   </footer>
+
+<!-- JavaScript for Light/Dark Mode -->
+
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById("theme-toggle");
+    
+    body.classList.toggle("dark");
+
+    // Change the icon based on theme
+    const isDark = body.classList.contains("dark");
+    toggleBtn.textContent = isDark ? "☀️ Toggle Light/Dark Theme" : "🌙 Toggle Light/Dark Theme";
+  }
+</script>
+	
+<!–– Main JS Script––>
 
   <script src="script.js"></script>
 </body>
