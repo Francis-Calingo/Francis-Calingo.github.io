@@ -33,6 +33,8 @@
 
 <button onclick="myFunction()">Toggle light/dark mode</button>
 
+<button id="theme-toggle" onclick="toggleDarkMode()">🌙 Toggle Theme</button>
+
 <main>
 <section id="resume-page">
  <h2 align="center">📄 Resume</h2>
@@ -189,10 +191,16 @@
   <!-- JavaScript for Light/Dark Mode -->
 
 <script>
-function myFunction() {
-   var element = document.body;
-   element.classList.toggle("dark");
-}
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById("theme-toggle");
+    
+    body.classList.toggle("dark");
+
+    // Change the icon based on theme
+    const isDark = body.classList.contains("dark");
+    toggleBtn.textContent = isDark ? "☀️ Toggle Theme" : "🌙 Toggle Theme";
+  }
 </script>
   <script src="script.js"></script>
 </body>
