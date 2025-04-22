@@ -28,7 +28,7 @@
 
   </header>
 
-<button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+<button id="theme-toggle" onclick="toggleDarkMode()">🌙 Toggle Light/Dark Theme</button>
 
   <main>
     <section id="readings">
@@ -232,6 +232,23 @@ The authors did a great job in also pointing out some valid criticisms of Sikolo
 
     </section>
   </main>
+
+<!-- JavaScript for Light/Dark Mode -->
+
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById("theme-toggle");
+    
+    body.classList.toggle("dark");
+
+    // Change the icon based on theme
+    const isDark = body.classList.contains("dark");
+    toggleBtn.textContent = isDark ? "☀️ Toggle Light/Dark Theme" : "🌙 Toggle Light/Dark Theme";
+  }
+</script>
+	
+<!–– Main JS Script––>
 
   <script src="script.js"></script>
 </body>
