@@ -60,7 +60,7 @@ L.marker([45.43961655932119, -75.62685051889041], {icon: educationIcon}).addTo(m
 
 // Add a marker at Elections Canada with a popup
 L.marker([45.428762896043075, -75.71424320354681], {icon: workIcon}).addTo(map)
-  .bindPopup("<b>Elections Canada</b><br>Monitoring Agent (August 2024–Present)");
+  .bindPopup("<b>Elections Canada</b><br>Monitoring Agent, Remote (August 2024–Present)");
 
 // Add a marker at Great Canadian Casino Resort Toronto with a popup
 L.marker([43.71521, -79.60377], {icon: workIcon}).addTo(map)
@@ -81,6 +81,10 @@ L.marker([45.42315506167389, -75.70029169984227], {icon: workIcon}).addTo(map)
 // Add a marker at Home Depot with a popup
 L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
   .bindPopup("<b>Home Depot Canada</b><br>Front End Associate-Lot, Cashier, Customer Service) (September 2017–August 2022)");
+
+// Add a marker at M2M Tech with a popup
+L.marker([49.18589333287997, -122.80034738798133], {icon: workIcon}).addTo(map)
+  .bindPopup("<b>M2M Tech</b><br>Object Detection Model Pipeline Assistant, Remote) (April 2025–Present)");
 
 // Territories Layer on Map
 
