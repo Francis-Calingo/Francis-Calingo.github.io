@@ -60,7 +60,7 @@ L.marker([45.43961655932119, -75.62685051889041], {icon: educationIcon}).addTo(m
 
 // Add a marker at Elections Canada with a popup
 L.marker([45.428762896043075, -75.71424320354681], {icon: workIcon}).addTo(map)
-  .bindPopup("<b>Elections Canada</b><br>Monitoring Agent, Remote (August 2024–Present)");
+  .bindPopup("<b>Elections Canada</b><br>Monitoring Agent, Remote (August 2024–June 2025)");
 
 // Add a marker at Great Canadian Casino Resort Toronto with a popup
 L.marker([43.71521, -79.60377], {icon: workIcon}).addTo(map)
