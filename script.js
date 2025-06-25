@@ -88,33 +88,31 @@ L.marker([49.18589333287997, -122.80034738798133], {icon: workIcon}).addTo(map)
 
 // Territories Layer on Map
 
+// 1. Color generator: gives each territory a soft pastel color
 function getColorForName(name) {
   let hash = 0;
   for (let i = 0; i < name.length; i++) {
     hash = name.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const hue = Math.abs(hash) % 360; // unique hue from hash
-  return `hsl(${hue}, 75%, 85%)`;    // soft pastel style
+  const hue = Math.abs(hash) % 360;
+  return `hsl(${hue}, 75%, 85%)`; // pastel HSL color
 }
 
-// Create an empty territory layer group
-let territoryLayer = L.layerGroup();
+// 2. Declare territoryLayer
+let territoryLayer;
 
-// Fetch and add Territory GeoJSON from Native Land
+// 3. Fetch territory GeoJSON from Native-Land
 fetch("https://native-land.ca/api/index.php?maps=territories")
   .then(res => res.json())
   .then(data => {
-    const territoryLayer = L.geoJSON(data, {
-      style: function (feature) {
-        const name = feature.properties.Name || "Territory";
-        return {
-          color: '#3e64ff',           // Outline color (theme accent)
-          weight: 1.5,
-          fillColor: getColorForName(name),
-          fillOpacity: 0.45
-        };
-      },
-      onEachFeature: function (feature, layer) {
+    territoryLayer = L.geoJSON(data, {
+      style: feature => ({
+        color: '#3e64ff', // outline color
+        weight: 1.5,
+        fillColor: getColorForName(feature.properties.Name),
+        fillOpacity: 0.45
+      }),
+      onEachFeature: (feature, layer) => {
         const name = feature.properties.Name || "Indigenous Territory";
         const lat = layer.getBounds().getCenter().lat.toFixed(5);
         const lng = layer.getBounds().getCenter().lng.toFixed(5);
@@ -122,7 +120,7 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
         const tooltipContent = `
           <div>
             <strong>${name}</strong><br>
-            <a href="https://whose.land/en/location/${lat},${lng}" target="_blank">
+            <a href="https://whose.land/en/location/${lat},${lng}" target="_blank" rel="noopener noreferrer">
               View on Whose.Land →
             </a>
           </div>
@@ -133,19 +131,20 @@ fetch("https://native-land.ca/api/index.php?maps=territories")
           direction: "top",
           className: "territory-tooltip"
         });
-        // 👉 Add hover style effects here:
-layer.on('mouseover', function () {
-  this.setStyle({ weight: 3, color: '#1f3fbf' });
-  this.bringToFront(); // make sure it's on top
-});
 
-layer.on('mouseout', function () {
-  this.setStyle({ weight: 1.5, color: '#3e64ff' });
-});
+        // Highlight effect
+        layer.on('mouseover', function () {
+          this.setStyle({ weight: 3, color: '#1f3fbf' });
+          this.bringToFront();
+        });
+
+        layer.on('mouseout', function () {
+          this.setStyle({ weight: 1.5, color: '#3e64ff' });
+        });
       }
     });
 
-    // Layer control
+    // 4. Add toggle control
     L.control.layers({}, {
       "Indigenous Territories": territoryLayer
     }, {
@@ -153,7 +152,7 @@ layer.on('mouseout', function () {
       position: "topright"
     }).addTo(map);
 
-    // Show the layer by default
+    // 5. Add layer to map by default
     territoryLayer.addTo(map);
   });
 
