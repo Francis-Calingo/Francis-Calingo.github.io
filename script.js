@@ -56,7 +56,7 @@ L.marker([45.43961655932119, -75.62685051889041], {icon: educationIcon}).addTo(m
   .bindPopup("<b>Collège La Cité</b><br>Programme Explore Program - Français langue seconde, French As A Second Language Certificate (Completed July 2022)");
 
 
-// Employment pop-ups
+// Employment/Paid Opportunities pop-ups
 
 // Add a marker at Elections Canada with a popup
 L.marker([45.428762896043075, -75.71424320354681], {icon: workIcon}).addTo(map)
@@ -84,7 +84,7 @@ L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
 
 // Add a marker at M2M Tech with a popup
 L.marker([49.18589333287997, -122.80034738798133], {icon: workIcon}).addTo(map)
-  .bindPopup("<b>M2M Tech</b><br>Object Detection Model Pipeline Assistant, Remote) (April 2025–Present)");
+  .bindPopup("<b>M2M Tech</b><br>Object Detection Model Pipeline Assistant, Remote) (April 2025–July 2025)");
 
 // Territories Layer on Map
 
