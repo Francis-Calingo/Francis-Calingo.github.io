@@ -348,9 +348,10 @@ form button:hover {
 
 .project-grid {
   display: grid;
-  grid-template-columns: 20px 20px 20px 20px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2rem 1rem;
+  max-width: 1000px;
   margin: auto;
 }
 
