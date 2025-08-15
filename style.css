@@ -348,7 +348,7 @@ form button:hover {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 100px 100px 100px 100px);
   gap: 2rem;
   padding: 2rem 1rem;
   max-width: 1000px;
