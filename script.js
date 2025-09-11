@@ -37,7 +37,7 @@ var workIcon = L.icon({
 
 // Add a marker at York University with a popup
 L.marker([43.7738, -79.5019], {icon: educationIcon}).addTo(map)
-  .bindPopup("<b>York University</b><br>HBSc. in Applied Mathematics and Statistics (Graduated June 2022)");
+  .bindPopup("<b>York University</b><br>MA in Human Geography (Expected June 2027)<br>HBSc. in Applied Mathematics and Statistics (Graduated June 2022)");
 
 // Add a marker at University of Waterloo with a popup
 L.marker([43.47239437493424, -80.54481468831173], {icon: educationIcon}).addTo(map)
@@ -80,11 +80,15 @@ L.marker([45.42315506167389, -75.70029169984227], {icon: workIcon}).addTo(map)
 
 // Add a marker at Home Depot with a popup
 L.marker([43.67164636033204, -79.46949887480902], {icon: workIcon}).addTo(map)
-  .bindPopup("<b>Home Depot Canada</b><br>Front End Associate-Lot, Cashier, Customer Service) (September 2017–August 2022)");
+  .bindPopup("<b>Home Depot Canada</b><br>Front End Associate-Lot, Cashier, Customer Service (September 2017–August 2022)");
 
 // Add a marker at M2M Tech with a popup
 L.marker([49.18589333287997, -122.80034738798133], {icon: workIcon}).addTo(map)
-  .bindPopup("<b>M2M Tech</b><br>Object Detection Model Pipeline Assistant, Remote) (April 2025–July 2025)");
+  .bindPopup("<b>M2M Tech</b><br>Object Detection Model Pipeline Assistant, Remote (April 2025–July 2025)");
+
+// Add a marker at York University with a popup
+L.marker([43.7738, -79.5019], {icon: workIcon}).addTo(map)
+  .bindPopup("<b>York University</b><br>Teaching Assistant-Faculty of Environmental and Urban Change, Remote (September 2025–Present)");
 
 // Territories Layer on Map
 
